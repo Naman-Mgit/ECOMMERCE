@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router'
 import './Header.css'
-const Header = () => {
+const Header = ({cartItem}:any) => {
+    let quantity=0;
+    cartItem.forEach((item:any)=>{
+         quantity+=item.quantity
+    })
     return (
         <div className="header">
             <div className="left-section">
@@ -28,7 +32,7 @@ const Header = () => {
 
                 <NavLink className="cart-link header-link" to="/checkout">
                     <img className="cart-icon" src="images/icons/cart-icon.png" />
-                    <div className="cart-quantity">3</div>
+                    <div className="cart-quantity">{quantity}</div>
                     <div className="cart-text">Cart</div>
                 </NavLink>
             </div>
