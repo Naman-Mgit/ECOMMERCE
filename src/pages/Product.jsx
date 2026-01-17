@@ -1,4 +1,3 @@
-
 import './HomePage.css'
 const Product = (props) => {
     return (
